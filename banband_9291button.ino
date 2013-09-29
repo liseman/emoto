@@ -11,7 +11,7 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(3, PIN, NEO_GRB + NEO_KHZ800);
 
-//button
+//button 
 const int buttonPin = 12;
 int buttonState = 0;
 int clickCount = 0;
