@@ -27,6 +27,8 @@ boolean newPressB = 1;
 boolean newPressA = 1;
 boolean newPressN = 1;
 
+boolean findMe = 0;
+
 void setup() {
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
@@ -135,6 +137,23 @@ void loop() {
       clickCountN = 0;
       break;
   }  
+  
+  //if a and n buttons are pressed simultaneously, enter or exit findme mode
+  if (buttonStateN == HIGH and buttonStateA == HIGH and findMe == 0)
+  {
+    folsom();
+    delay(200);
+    findMe = 1; 
+  }
+  
+  if (buttonStateN == HIGH and buttonStateA == HIGH and findMe == 1)
+  {
+    off();  
+    delay(200);
+     findMe = 0; 
+  }
+  
+  
   
   
   delay(100);
